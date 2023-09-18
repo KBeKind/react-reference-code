@@ -1,4 +1,20 @@
 import Link from "next/link";
+//By default all components are server components
+// rendered on the server side
+
+// Advantages of React Server Component
+// Fast loading, dont have to wait for JS to load
+// smaller client bundle size
+// SEO friendly
+// Access to resources the client cant access
+// Hide sensitive data from client
+// more secure against cross site scripting attacks
+// improved developer experience
+
+//Disadvantages
+// not as interactive
+// no component state.  we cant use "useState" hook
+// no component lifecycle methods, we cant use the "useEffect" hook
 
 const HomePage = () => {
   return (

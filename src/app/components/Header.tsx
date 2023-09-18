@@ -1,10 +1,14 @@
 import React from "react";
 import Link from "next/link";
+
+//By default all components are server components
+// rendered on the server side
+
 const Header = () => {
   return (
     <header>
       THIS is a friggan header
-      <div className="bg-indigo-500">
+      <div>
         <Link href="/">Home</Link>
       </div>
       <div>
