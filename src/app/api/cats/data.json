@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Cat Breeds",
+    "description": "There are over 70 different breeds of cats, each with its own unique appearance and personality."
+  },
+  {
+    "id": 2,
+    "title": "Cat Care",
+    "description": "Cats are relatively low-maintenance pets, but they do require some basic care, such as food, water, shelter, and grooming."
+  },
+  {
+    "id": 3,
+    "title": "Cat Health",
+    "description": "Cats are generally healthy animals, but they can be susceptible to certain health problems, such as feline leukemia and feline immunodeficiency virus."
+  },
+  {
+    "id": 4,
+    "title": "Cat Behavior",
+    "description": "Cats are curious and intelligent creatures, and they can be very affectionate companions."
+  },
+  {
+    "id": 5,
+    "title": "Cat Fun Facts",
+    "description": "Did you know that cats can sleep for up to 16 hours a day? Or that they have 32 muscles in each ear?"
+  }
+]

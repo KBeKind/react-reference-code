@@ -1,4 +1,7 @@
 import Link from "next/link";
+
+import CatStuffComp from "./components/CatStuffComp";
+
 //By default all components are server components
 // rendered on the server side
 
@@ -31,6 +34,7 @@ const HomePage = () => {
           <Link href="/about/team">About Team</Link>
         </li>
       </ul>
+      <CatStuffComp></CatStuffComp>
     </div>
   );
 };

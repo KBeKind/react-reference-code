@@ -8,7 +8,16 @@ import { FaStar, FaCodeBranch, FaEye } from "react-icons/fa";
 
 // fetching repos from github
 async function fetchRepos() {
-  const response = await fetch("https://api.github.com/users/KBeKind/repos");
+  const response = await fetch("https://api.github.com/users/KBeKind/repos", {
+    // adding this object with the next object inside it
+    // then using the revalidate to set the timer for how often fetched data will be refreshed.
+    // right now the timer is set for 1 hour (60 seconds * 60 = 60 min)
+    // if data is often changing then you will need this
+    //and might want a low number depending on how often data needs to be updated
+    next: {
+      revalidate: 60 * 60,
+    },
+  });
   const repos = await response.json();
   return repos;
 }
