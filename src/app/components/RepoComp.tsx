@@ -12,12 +12,14 @@ interface RepoPageProps {
 //   return repo;
 // }
 
-const Repo = async ({ name }: RepoPageProps) => {
+const RepoComp = async ({ name }: RepoPageProps) => {
   return (
     <div>
-      <p> Repo {name} </p>
+      <p> Repo: {name} </p>
+
+      <p>information about the {name} repo...</p>
     </div>
   );
 };
 
-export default Repo;
+export default RepoComp;

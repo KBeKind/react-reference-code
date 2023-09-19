@@ -4,7 +4,7 @@ import Link from "next/link";
 //By default all components are server components
 // rendered on the server side
 
-const Header = () => {
+const HeaderComp = () => {
   return (
     <header>
       THIS is a friggan header
@@ -24,4 +24,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderComp;

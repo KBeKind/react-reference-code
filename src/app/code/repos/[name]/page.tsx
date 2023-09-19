@@ -1,6 +1,6 @@
 import React from "react";
 
-import Repo from "@/app/components/Repo";
+import RepoComp from "@/app/components/RepoComp";
 import Link from "next/link";
 
 // to get the name for the page we are passing
@@ -15,10 +15,16 @@ interface RepoPageProps {
 
 const RepoPage = ({ params: { name } }: RepoPageProps) => {
   return (
-    <div>
-      <Link href="/code/repos">Back</Link>
-
-      <Repo name={name} />
+    <div className="m-8">
+      <Link
+        href="/code/repos"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Back
+      </Link>
+      <br />
+      <br />
+      <RepoComp name={name} />
     </div>
   );
 };

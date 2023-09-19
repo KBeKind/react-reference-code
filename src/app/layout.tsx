@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 
-import Header from "./components/Header";
+import HeaderComp from "./components/HeaderComp";
 
 // importing a font (Poppins)
 import { Poppins } from "next/font/google";
@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <div className="bg-indigo-500">
-          <Header />
+          <HeaderComp />
         </div>
         <main>{children}</main>
       </body>
