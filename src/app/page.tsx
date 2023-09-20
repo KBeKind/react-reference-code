@@ -1,9 +1,14 @@
-import Link from "next/link";
+"use client"; // changing this to client component
+
+import { useState, useEffect } from "react";
 
 import CatStuffComp from "./components/CatStuffComp";
+import LoadingPage from "./loading";
+import CatStuffSearchComp from "./components/CatStuffSearchComp";
 
 //By default all components are server components
 // rendered on the server side
+// we have set this to a client side component because it needs to hold state
 
 // Advantages of React Server Component
 // Fast loading, dont have to wait for JS to load
@@ -19,22 +24,41 @@ import CatStuffComp from "./components/CatStuffComp";
 // no component state.  we cant use "useState" hook
 // no component lifecycle methods, we cant use the "useEffect" hook
 
+interface CatStuffInterface {
+  id: number;
+  title: string;
+  description: string;
+}
+
 const HomePage = () => {
+  //setting our state
+  const [catStuff, setCatStuff] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCatStuffs = async (/*params:type*/) => {
+      const response = await fetch("/api/cats");
+      const data = await response.json();
+      setCatStuff(data);
+      setLoading(false);
+    };
+    fetchCatStuffs();
+  }, []);
+
+  const getSearchResults = function (results: []) {
+    setCatStuff(results);
+  };
+
+  if (loading) {
+    return <LoadingPage></LoadingPage>;
+  }
+
   return (
     <div>
       <p>Howdy :D</p>
-      <ul>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/about">About</Link>
-        </li>
-        <li>
-          <Link href="/about/team">About Team</Link>
-        </li>
-      </ul>
-      <CatStuffComp></CatStuffComp>
+      <CatStuffSearchComp getSearchResults={getSearchResults} />
+      {/* passing in the catStuff state into the CatStuffComp component */}
+      <CatStuffComp catStuff={catStuff}></CatStuffComp>
     </div>
   );
 };
