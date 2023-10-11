@@ -1,7 +1,6 @@
 "use client"; // changing this to client component
 
 import { useState, useEffect } from "react";
-
 import CatStuffComp from "./components/CatStuffComp";
 import LoadingPage from "./loading";
 import CatStuffSearchComp from "./components/CatStuffSearchComp";
@@ -44,6 +43,7 @@ const HomePage = () => {
     };
     fetchCatStuffs();
   }, []);
+  // the blank array causes the useEffect to run only upon original load
 
   const getSearchResults = function (results: []) {
     setCatStuff(results);
